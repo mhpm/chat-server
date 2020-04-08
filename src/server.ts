@@ -10,7 +10,7 @@ const server:any = http.createServer(app)
 const io:any = socketio(server)
 
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
+app.get(process.env.NODE_ENV === "production" ? "/chat-server" : "/", (req: Request, res: Response, next: NextFunction) => {
   res.sendFile(path.join(__dirname + "/routes/index.html"));
 });
 
