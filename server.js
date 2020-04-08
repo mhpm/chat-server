@@ -12,7 +12,7 @@ const app = express_1.default();
 const PORT = process.env.PORT || 4001;
 const server = http_1.default.createServer(app);
 const io = socket_io_1.default(server);
-app.get("/", (req, res, next) => {
+app.get(process.env.NODE_ENV === "production" ? "/chat-server" : "/", (req, res, next) => {
     res.sendFile(path_1.default.join(__dirname + "/routes/index.html"));
 });
 // Run when client connects
