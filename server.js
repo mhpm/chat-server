@@ -14,7 +14,7 @@ const server = http_1.default.createServer(app);
 const io = socket_io_1.default(server);
 app.get(process.env.NODE_ENV === "production" ? "/chat-server" : "/", (req, res, next) => {
     //res.sendFile(path.join(__dirname + "/routes/index.html"));
-    res.send('Server live!');
+    res.send(JSON.stringify({ Hello: 'Server Lives!' }));
 });
 // Run when client connects
 io.on("connection", (socket) => {
