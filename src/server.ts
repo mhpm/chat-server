@@ -1,7 +1,7 @@
 import express, {Application, Request, Response, NextFunction} from "express"
 import http from "http";
 import socketio from "socket.io";
-import path from "path";
+//import path from "path";
 import formatMessage from "./utils/messages"
 
 const app:Application = express()
@@ -9,9 +9,9 @@ const PORT:string | number = process.env.PORT || 4001
 const server:any = http.createServer(app)
 const io:any = socketio(server)
 
-
 app.get(process.env.NODE_ENV === "production" ? "/chat-server" : "/", (req: Request, res: Response, next: NextFunction) => {
-  res.sendFile(path.join(__dirname + "/routes/index.html"));
+  //res.sendFile(path.join(__dirname + "/routes/index.html"));
+  res.send('Server live!')
 });
 
 // Run when client connects
@@ -33,6 +33,5 @@ io.on("connection", (socket:any) => {
     io.emit("getPort", PORT)
   })
 })
-
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`))
