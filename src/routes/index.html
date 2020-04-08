@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Chat Server</title>
+    <style>
+      #root{
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      html,
+        body {
+          height: 100%;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container" style="height: 100vh;">
+      <div class="h-100 d-flex">
+        <div class="justify-content-center align-self-center w-100">
+          <div class="row">
+            <div class="col-md text-center">
+              <h4 id="title"></h4>
+              <button class="btn btn-info">Server Live</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <!-- <script>
+      const socket = io("http://localhost:4001");
+
+      function setPort(port){
+        let div = document.getElementById('title')
+        div.innerHTML = `SocketIO Server is live on port:${port}`
+      }
+      
+      socket.on("getPort", port => setPort(port))
+
+      function sendMsg() {
+        socket.emit("PORT");
+      }
+    </script> -->
+  </body>
+</html>
