@@ -6,14 +6,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const http_1 = __importDefault(require("http"));
 const socket_io_1 = __importDefault(require("socket.io"));
-const path_1 = __importDefault(require("path"));
+//import path from "path";
 const messages_1 = __importDefault(require("./utils/messages"));
 const app = express_1.default();
 const PORT = process.env.PORT || 4001;
 const server = http_1.default.createServer(app);
 const io = socket_io_1.default(server);
 app.get(process.env.NODE_ENV === "production" ? "/chat-server" : "/", (req, res, next) => {
-    res.sendFile(path_1.default.join(__dirname + "/routes/index.html"));
+    //res.sendFile(path.join(__dirname + "/routes/index.html"));
+    res.send('Server live!');
 });
 // Run when client connects
 io.on("connection", (socket) => {
