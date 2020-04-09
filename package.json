@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "build": "webpack"
   },
+  "heroku-run-build-script": true,
   "author": "michelle perez morales",
   "license": "ISC",
   "dependencies": {
