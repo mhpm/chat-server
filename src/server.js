@@ -10,7 +10,8 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/routes/index.html"))
+  // res.sendFile(path.join(__dirname + "/routes/index.html"))
+  res.send("Server Liver on port: " + PORT)
 })
 
 // Run when client connects
