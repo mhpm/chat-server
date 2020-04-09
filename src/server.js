@@ -1,8 +1,8 @@
-import express from "express"
-import http from "http"
-import socketio from "socket.io"
-import path from "path"
-import formatMessage from "./utils/messages"
+const express = require("express")
+const http = require("http")
+const socketio = require("socket.io")
+const path = require("path")
+const formatMessage = require("./utils/messages")
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -14,7 +14,7 @@ app.get("/", (req, res, next) => {
 })
 
 // Run when client connects
-io.on("connection", (socket: any) => {
+io.on("connection", (socket) => {
   // Message for all the clients
   socket.emit("welcome", "Welcome to Chat")
 
@@ -24,7 +24,7 @@ io.on("connection", (socket: any) => {
   })
 
   // Listen for chatMessage
-  socket.on("chatMessage", (user: any, msg: string) => {
+  socket.on("chatMessage", (user, msg) => {
     io.emit("message", formatMessage(user, msg))
   })
 
