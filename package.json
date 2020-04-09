@@ -4,9 +4,8 @@
   "description": "Real chat whith rooms",
   "main": "server.js",
   "scripts": {
-    "start": "node build/server.js",
-    "dev": "nodemon src/server.ts",
-    "build": "tsc -p ."
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "author": "michelle perez morales",
   "license": "ISC",
