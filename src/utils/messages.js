@@ -4,7 +4,7 @@ function formatMessage(user, msg) {
   return {
     user,
     msg,
-    time: moment().format("h:mm a"),
+    time: moment.utc().format("h:mm a"),
   }
 }
 
